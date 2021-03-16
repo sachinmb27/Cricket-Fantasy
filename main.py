@@ -19,6 +19,9 @@ with open('/Users/sachinmb/Fantasy/matchURLs.txt') as f:
     for line in f:
         URLs.append(line.strip())
 
+matchCount = 0
+matchName = {}
+
 for URL in URLs:
     scoreCard = requests.get(URL).text
     soup = BeautifulSoup(scoreCard, 'html.parser')
@@ -92,7 +95,7 @@ for URL in URLs:
     players = dataToBowlers(firstInnBowlInfo, players)
     players = dataToBowlers(secondInnBowlInfo, players)
 
-    if not os.path.isfile('~/points/seasonPoints.json'):
+    if not os.path.isfile('/Users/sachinmb/Fantasy/points/seasonPoints.json'):
         dumpPlayers = {}
         for key in players:
             try:
@@ -100,11 +103,11 @@ for URL in URLs:
             except KeyError:
                 pass
         
-        with open('~/points/seasonPoints.json', 'w') as f:            
+        with open('/Users/sachinmb/Fantasy/points/seasonPoints.json', 'w') as f:            
             json.dump(dumpPlayers, f, indent=4)
 
     else:
-        with open('~/points/seasonPoints.json', 'r') as f:
+        with open('/Users/sachinmb/Fantasy/points/seasonPoints.json', 'r') as f:
             existPlayers = json.load(f)
 
         for key in players:
@@ -119,11 +122,26 @@ for URL in URLs:
                 except KeyError:
                     pass
         
-        with open('~/points/seasonPoints.json', 'w') as f:
+        with open('/Users/sachinmb/Fantasy/points/seasonPoints.json', 'w') as f:
             json.dump(existPlayers, f, indent=4)
 
     matchFileName = URL.split('/')[5]
+    matchCount += 1
 
-    with open('~/points/matchPoints/' + matchFileName + '.json', 'w') as f:
+    with open('/Users/sachinmb/Fantasy/points/matchPoints/' + matchFileName + '.json', 'w') as f:
         json.dump(players, f, indent=4)
         print(matchFileName + ' is done!')
+    
+    if not os.path.isfile('/Users/sachinmb/Fantasy/matches.json'):
+        matchName[matchCount] = matchFileName
+
+        with open('/Users/sachinmb/Fantasy/matches.json', 'w') as f:
+            json.dump(matchName, f, indent=4)
+    
+    else:
+        with open('/Users/sachinmb/Fantasy/matches.json', 'r') as f:
+            matches = json.load(f)
+            matches[matchCount] = matchFileName
+        
+        with open('/Users/sachinmb/Fantasy/matches.json', 'w') as f:
+            json.dump(matches, f, indent=4)
