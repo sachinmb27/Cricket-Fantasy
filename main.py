@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import os
+import pymongo
 
 from methods.inningsOutBy import innOutBy
 from methods.catches import catches
@@ -14,13 +15,17 @@ from methods.dataToBatsman import dataToBatsman
 from methods.dataToBowlers import dataToBowlers
 from methods.formDict import formDict
 
-with open('/Users/sachinmb/Fantasy/matchURLs.txt') as f:
+with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/matchURLs.txt') as f:
     URLs = []
     for line in f:
         URLs.append(line.strip())
 
 matchCount = 0
 matchName = {}
+
+client = pymongo.MongoClient('mongodb+srv://sachin:helloworld@cluster0.khq4w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+database = client['test2']
+collection = database['seasonpoints']
 
 for URL in URLs:
     scoreCard = requests.get(URL).text
@@ -95,7 +100,7 @@ for URL in URLs:
     players = dataToBowlers(firstInnBowlInfo, players)
     players = dataToBowlers(secondInnBowlInfo, players)
 
-    if not os.path.isfile('/Users/sachinmb/Fantasy/points/seasonPoints.json'):
+    if not os.path.isfile('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/points/seasonPoints.json'):
         dumpPlayers = {}
         for key in players:
             try:
@@ -103,11 +108,12 @@ for URL in URLs:
             except KeyError:
                 pass
         
-        with open('/Users/sachinmb/Fantasy/points/seasonPoints.json', 'w') as f:            
+        with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/points/seasonPoints.json', 'w') as f:  
             json.dump(dumpPlayers, f, indent=4)
+            collection.insert_many([dumpPlayers])
 
     else:
-        with open('/Users/sachinmb/Fantasy/points/seasonPoints.json', 'r') as f:
+        with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/points/seasonPoints.json', 'r') as f:
             existPlayers = json.load(f)
 
         for key in players:
@@ -122,26 +128,28 @@ for URL in URLs:
                 except KeyError:
                     pass
         
-        with open('/Users/sachinmb/Fantasy/points/seasonPoints.json', 'w') as f:
+        with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/points/seasonPoints.json', 'w') as f:
             json.dump(existPlayers, f, indent=4)
+            collection.delete_many({})
+            collection.insert_many([existPlayers])
 
     matchFileName = URL.split('/')[5]
     matchCount += 1
 
-    with open('/Users/sachinmb/Fantasy/points/matchPoints/' + matchFileName + '.json', 'w') as f:
+    with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/points/matchPoints/' + matchFileName + '.json', 'w') as f:
         json.dump(players, f, indent=4)
         print(matchFileName + ' is done!')
     
-    if not os.path.isfile('/Users/sachinmb/Fantasy/matches.json'):
+    if not os.path.isfile('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/matches.json'):
         matchName[matchCount] = matchFileName
 
-        with open('/Users/sachinmb/Fantasy/matches.json', 'w') as f:
+        with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/matches.json', 'w') as f:
             json.dump(matchName, f, indent=4)
     
     else:
-        with open('/Users/sachinmb/Fantasy/matches.json', 'r') as f:
+        with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/matches.json', 'r') as f:
             matches = json.load(f)
             matches[matchCount] = matchFileName
         
-        with open('/Users/sachinmb/Fantasy/matches.json', 'w') as f:
+        with open('/Users/sachinmb/Documents/GitHub/Cricket-Fantasy/matches.json', 'w') as f:
             json.dump(matches, f, indent=4)

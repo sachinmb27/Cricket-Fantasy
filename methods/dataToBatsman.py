@@ -16,7 +16,7 @@ def dataToBatsman(batsmanInfo, players):
                 players[p['pid']]['runouts'] = p['runouts']
                 players[p['pid']]['stumpings'] = p['stumpings']
                 
-                players[p['pid']]['points'] = int(p['runsScored']) + int(p['fours']) + (int(p['sixes']) * 2) + bpBatsman.batsmanBonusPoints(int(p['runsScored']), p['out'], int(p['balls']), float(p['sr'])) + (p['catches'] * 8) + (p['runouts'] * 8) + (p['stumpings'] * 12)
+                players[p['pid']]['points'] = int(p['runsScored']) + int(p['fours']) + (int(p['sixes']) * 2) + bpBatsman.batsmanBonusPoints(int(p['runsScored']), p['out'], int(p['balls']), float(p['sr'])) + (p['catches'] * 10) + (p['runouts'] * 10) + (p['stumpings'] * 10)
             except KeyError:
                 pass
     

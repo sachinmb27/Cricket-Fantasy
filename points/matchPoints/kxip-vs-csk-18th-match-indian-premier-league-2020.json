@@ -18,7 +18,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 80
+        "points": 82
     },
     "2195": {
         "pid": "2195",
@@ -39,7 +39,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 29
+        "points": 34
     },
     "6319": {
         "pid": "6319",
@@ -60,7 +60,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 31
+        "points": 41
     },
     "9406": {
         "pid": "9406",
@@ -81,7 +81,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 40
+        "points": 60
     },
     "7662": {
         "pid": "7662",
@@ -144,7 +144,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": -6
+        "points": -15
     },
     "14452": {
         "pid": "14452",
@@ -165,7 +165,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": -4
+        "points": -10
     },
     "14659": {
         "pid": "14659",
@@ -207,7 +207,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": -2
+        "points": -5
     },
     "9395": {
         "pid": "9395",
@@ -228,7 +228,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": -2
+        "points": -5
     },
     "158": {
         "pid": "158",
@@ -249,7 +249,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 108
+        "points": 120
     },
     "6311": {
         "pid": "0",
@@ -290,7 +290,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 108
+        "points": 120
     },
     "265": {
         "pid": "0",
@@ -351,7 +351,7 @@
         "catches": 1,
         "runouts": 0,
         "stumpings": 0,
-        "points": 33
+        "points": 35
     },
     "242": {
         "pid": "242",
@@ -372,7 +372,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": -2
+        "points": -5
     },
     "10420": {
         "pid": "10420",
@@ -393,7 +393,7 @@
         "catches": 1,
         "runouts": 0,
         "stumpings": 0,
-        "points": 4
+        "points": 0
     },
     "8683": {
         "pid": "8683",
@@ -414,7 +414,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 48
+        "points": 45
     },
     "466": {
         "pid": "466",
@@ -435,7 +435,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 21
+        "points": 15
     },
     "7836": {
         "pid": "7836",
@@ -456,6 +456,6 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 2
+        "points": 5
     }
 }

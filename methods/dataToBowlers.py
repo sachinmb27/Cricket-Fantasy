@@ -16,8 +16,8 @@ def dataToBowlers(bowlersInfo, players):
             players[p['pid']]['runouts'] = p['runouts']
 
             try:
-                players[p['pid']]['points'] = players[p['pid']]['points'] + (int(p['wickets']) * 25) + bpBowlers.bowlersBonusPoints(int(p['wickets']), int(p['maidens']), float(p['overs']), float(p['economy'])) + (p['catches'] * 8) + (p['runouts'] * 8)
+                players[p['pid']]['points'] = players[p['pid']]['points'] + (int(p['wickets']) * 25) + bpBowlers.bowlersBonusPoints(int(p['wickets']), int(p['maidens']), float(p['overs']), float(p['economy'])) + (p['catches'] * 10) + (p['runouts'] * 10)
             except KeyError:
-                players[p['pid']]['points'] = (int(p['wickets']) * 25) + bpBowlers.bowlersBonusPoints(int(p['wickets']), int(p['maidens']), float(p['overs']), float(p['economy'])) + (p['catches'] * 8) + (p['runouts'] * 8)
+                players[p['pid']]['points'] = (int(p['wickets']) * 25) + bpBowlers.bowlersBonusPoints(int(p['wickets']), int(p['maidens']), float(p['overs']), float(p['economy'])) + (p['catches'] * 10) + (p['runouts'] * 10)
 
     return players

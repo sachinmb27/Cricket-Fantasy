@@ -60,7 +60,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": -2
+        "points": -10
     },
     "12254": {
         "pid": "12254",
@@ -102,7 +102,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 35
+        "points": 40
     },
     "145": {
         "pid": "145",
@@ -123,7 +123,7 @@
         "catches": 1,
         "runouts": 0,
         "stumpings": 0,
-        "points": 6
+        "points": -1
     },
     "8095": {
         "pid": "8095",
@@ -144,7 +144,7 @@
         "catches": 0,
         "runouts": 1,
         "stumpings": 0,
-        "points": 16
+        "points": 14
     },
     "10692": {
         "pid": "10692",
@@ -165,7 +165,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 49
+        "points": 55
     },
     "8292": {
         "pid": "8292",
@@ -186,7 +186,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 11
+        "points": 8
     },
     "10551": {
         "pid": "10551",
@@ -249,7 +249,7 @@
         "catches": 1,
         "runouts": 0,
         "stumpings": 0,
-        "points": 36
+        "points": 43
     },
     "1643": {
         "pid": "1643",
@@ -332,7 +332,7 @@
         "catches": 1,
         "runouts": 1,
         "stumpings": 0,
-        "points": 41
+        "points": 45
     },
     "10945": {
         "pid": "10945",
@@ -353,7 +353,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 39
+        "points": 50
     },
     "8333": {
         "pid": "8333",
@@ -374,7 +374,7 @@
         "catches": 1,
         "runouts": 1,
         "stumpings": 0,
-        "points": 30
+        "points": 45
     },
     "1920": {
         "pid": "1920",
@@ -416,7 +416,7 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 105
+        "points": 120
     },
     "9715": {
         "pid": "9715",
@@ -458,6 +458,6 @@
         "catches": 0,
         "runouts": 0,
         "stumpings": 0,
-        "points": 56
+        "points": 65
     }
 }

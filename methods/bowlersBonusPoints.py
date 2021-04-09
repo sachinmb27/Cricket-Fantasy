@@ -1,23 +1,23 @@
 def bowlersBonusPoints(wickets, maidens, overs, economy):
     wicketsPoints = 0
     if wickets == 3:
-        wicketsPoints = 8
+        wicketsPoints = 10
     elif wickets == 5:
-        wicketsPoints = 16
+        wicketsPoints = 20
     
     economyPoints = 0
     if overs >= 2:
         if economy <= 4:
-            economyPoints = 6
+            economyPoints = 15
         elif economy > 4 and economy <= 4.99:
-            economyPoints = 4
+            economyPoints = 10
         elif economy >= 5 and economy <= 6:
-            economyPoints = 2
+            economyPoints = 5
         elif economy >= 9 and economy <= 10:
-            economyPoints = -2
+            economyPoints = -5
         elif economy >= 10.01 and economy <= 11:
-            economyPoints = -4
+            economyPoints = -10
         elif economy > 11:
-            economyPoints = -6
+            economyPoints = -15
 
-    return wicketsPoints + economyPoints + (maidens * 8)
+    return wicketsPoints + economyPoints + (maidens * 10)
