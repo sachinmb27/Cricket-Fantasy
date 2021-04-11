@@ -1,4 +1,6 @@
+# Returns bonus points for Batsman
 def batsmanBonusPoints(runs, out, balls, sRate):
+    # Bonus points for runs scored
     runsPoints = 0
     if runs >= 30 and runs < 50:
         runsPoints = 5
@@ -11,6 +13,7 @@ def batsmanBonusPoints(runs, out, balls, sRate):
     else:
         runsPoints = 0
     
+    # Bonus points for strike rate of the batsman
     srPoints = 0
     if balls >= 10:
         if sRate > 170:

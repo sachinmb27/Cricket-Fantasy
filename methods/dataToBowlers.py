@@ -1,3 +1,4 @@
+# Returns players (Bowlers) with data for the match
 import methods.bowlersBonusPoints as bpBowlers
 
 def dataToBowlers(bowlersInfo, players):

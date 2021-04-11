@@ -1,3 +1,4 @@
+# Returns the players who effected runouts
 def runouts(battingInfo):
     outInfo = []
     for p in battingInfo:

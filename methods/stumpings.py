@@ -1,3 +1,4 @@
+# Returns players who effected stumpings
 def stumpings(battingInfo):
     stumpingInfo = []
     for p in battingInfo:

@@ -1,3 +1,4 @@
+# Returns the bowlers who took the wickets
 def innOutBy(innBat):
     outBy = []
     for f in innBat:

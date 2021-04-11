@@ -1,3 +1,4 @@
+# Extract batsman data from the response and returns the information
 def getBattingInfo(bat, firstInnCatches, firstInnRunouts, firstInnStumpings, secondInnCatches, secondInnRunouts, secondInnStumpings):
     batsmanInfo = []
     remove = 'Did not Bat'

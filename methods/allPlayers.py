@@ -1,3 +1,4 @@
+# Returns the Playing XI for both teams in a match
 def allPlayers(team, playerTemplate):
     players = {}
     for p in team:

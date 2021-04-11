@@ -1,3 +1,4 @@
+# Returns players (Batsmans) with data for the match
 import methods.batsmanBonusPoints as bpBatsman
 
 def dataToBatsman(batsmanInfo, players):

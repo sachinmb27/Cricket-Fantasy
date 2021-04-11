@@ -1,3 +1,4 @@
+# Returns the players who took catches
 def catches(battingInfo):
     outInfo = []
     for p in battingInfo:
@@ -18,7 +19,7 @@ def catches(battingInfo):
 
     catchesTakenBy = []
     for b in removedB:
-        if 'run out' not in b:
+        if 'run out' not in b and 'lbw' not in b and 'and' not in b:
             catchesTakenBy.append(b)
             
     catchesTakenBy = [x for x in catchesTakenBy if x != '']

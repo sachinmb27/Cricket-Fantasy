@@ -1,3 +1,4 @@
+# Extract bowler data from the response and returns the information
 def getBowlingInfo(bowl, firstInnCatches, firstInnRunouts, secondInnCatches, secondInnRunouts):
     bowlerInfo = []
     for b in bowl:
